@@ -9,7 +9,6 @@ import {
   Stack,
   Avatar,
 } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
 
 import Container from '../components/Container';
 
@@ -21,13 +20,10 @@ export default function BlogLayout({ children, frontMatter }) {
     dark: 'gray.400',
   };
 
-  const router = useRouter();
-  const slug = router.asPath.replace('/blog', '');
-
   return (
     <Container>
       <Head>
-        <title>{slug} - Blog | Teerapat Prommarak</title>
+        <title>{frontMatter.title} - Blog | Teerapat Prommarak</title>
       </Head>
       <Stack
         as='article'
