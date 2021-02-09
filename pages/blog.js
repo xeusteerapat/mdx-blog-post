@@ -36,13 +36,14 @@ const Blog = ({ posts }) => {
           justifyContent='center'
           alignItems='flex-start'
           m='0 auto 4rem auto'
-          maxWidth='700px'
+          maxWidth='750px'
         >
           <Flex
             flexDirection='column'
             justifyContent='flex-start'
             alignItems='flex-start'
-            maxWidth='700px'
+            maxWidth='750px'
+            minWidth='650px'
             px={4}
           >
             <Heading letterSpacing='tight' mb={2} as='h1' size='2xl'>
