@@ -1,11 +1,25 @@
 ---
 title: 'Test post'
 publishedAt: '2021-02-22'
-summary: 'My first post with Next.js Chakra-UI and MDX My first post with Next.js Chakra-UI and MDXMy first post with Next.js Chakra-UI and MDXMy first post with Next.js'
+summary: 'Update my blog post using MDX in stead of Contentful'
 ---
 
-# My First Post
+I just refactored my blog based on Markdown files. เพราะดูทรงแล้ว Contentful ไม่ตอบโจทย์การทำ Syntax Highlighting เท่าไหร่ (ที่จริงอาจจะมีวิธีทำได้) เมื่อลองบวกลบคูณหารดูแล้ว ใช้ Markdown ตั้งแต่แรกเลยน่าจะโอเคกว่า
 
-Another post
+```javascript
+const formData = {};
 
-This is AWESOME!!!
+for (let input of [creditCardInput, termsCheckBox, veggieSelect]) {
+  input.addEventListener('input', ({ target }) => {
+    const { name, type, value, checked } = target;
+    formData[name] = type === 'checkbox' ? checked : value;
+    console.log(formData);
+  });
+}
+```
+
+```shell
+npm install -g gatsby-cli
+```
+
+ด้วยประการฉะนี้แล...
