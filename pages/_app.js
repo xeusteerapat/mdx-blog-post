@@ -5,6 +5,8 @@ import {
 } from '@chakra-ui/react';
 import customTheme from '../styles/theme';
 import { Global, css } from '@emotion/react';
+import { DefaultSeo } from 'next-seo';
+import SEO from '../next-seo.config';
 import { prismLightTheme, prismDarkTheme } from '../styles/prism';
 
 const GlobalStyle = ({ children }) => {
@@ -49,6 +51,7 @@ function MyApp({ Component, pageProps }) {
         }}
       >
         <GlobalStyle>
+          <DefaultSeo {...SEO} />
           <Component {...pageProps} />
         </GlobalStyle>
       </ColorModeProvider>
