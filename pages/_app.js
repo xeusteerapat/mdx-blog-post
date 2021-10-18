@@ -2,12 +2,12 @@ import {
   ChakraProvider,
   ColorModeProvider,
   useColorMode,
-} from '@chakra-ui/react';
-import customTheme from '../styles/theme';
-import { Global, css } from '@emotion/react';
-import { DefaultSeo } from 'next-seo';
-import SEO from '../next-seo.config';
-import { prismLightTheme, prismDarkTheme } from '../styles/prism';
+} from "@chakra-ui/react";
+import customTheme from "../styles/theme";
+import { Global, css } from "@emotion/react";
+import { NextSeo } from "next-seo";
+import SEO from "../next-seo.config";
+import { prismLightTheme, prismDarkTheme } from "../styles/prism";
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode();
@@ -15,7 +15,7 @@ const GlobalStyle = ({ children }) => {
     <>
       <Global
         styles={css`
-          ${colorMode === 'light' ? prismLightTheme : prismDarkTheme};
+          ${colorMode === "light" ? prismLightTheme : prismDarkTheme};
           ::selection {
             background-color: #90cdf4;
             color: #fefefe;
@@ -32,7 +32,7 @@ const GlobalStyle = ({ children }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: ${colorMode === 'light' ? 'white' : '#171717'};
+            background: ${colorMode === "light" ? "white" : "#171717"};
           }
         `}
       />
@@ -46,12 +46,12 @@ function MyApp({ Component, pageProps }) {
     <ChakraProvider resetCSS theme={customTheme}>
       <ColorModeProvider
         options={{
-          initialColorMode: 'light',
+          initialColorMode: "light",
           useSystemColorMode: true,
         }}
       >
         <GlobalStyle>
-          <DefaultSeo {...SEO} />
+          <NextSeo {...SEO} />
           <Component {...pageProps} />
         </GlobalStyle>
       </ColorModeProvider>
